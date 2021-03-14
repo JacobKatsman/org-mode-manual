@@ -1,0 +1,286 @@
+#+STARTUP: showall
+#+TITLE: "Org-mode short usefull manual"
+#+AUTHOR: "J/Z/Katsman"
+#+EMAIL:  "call89269081096@gmail.com"
+#+INCLUDE: "C:\\org-mode\\header.org"
+
+* Предварительные настройки (Getting Started)
+
+Hi people! Since 2 year ago, I have use org-mode. But in this long perid 
+I do not found the adequate, short manual for org-mode.
+The point is that Org-mode requires simultaneous setting .emacs file, setting org-mode file,
+shortcat binding algorithm action at the same time. I try assembling
+this a short manual in this job in this paper. 
+I belive in usefull this work. Thank.
+
+- Первое замечание: Emacs расчитан на скорость печати в английской раскладке более 50 WPM
+- Второе замечание: В Emacs невозможно, да и не нужно, работать без "доски"!
+
+** Это шапка нашего org-mode файла (её включаем INCLUD-ом):
+
+#+BEGIN_EXAMPLE
+
+#+STARTUP: logdrawer
+#+STARTUP: showall
+#+STARTUP: noalign
+#+EXPORT_SELECT_TAGS: export
+#+STARTUP: inlineimages
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+TAGS:  #+TAGS: { @work(r)  @home(m)  @math(h) @lingvo(l) }  @goal(g)  @time(i)
+#+PROPERTY: Effort_ALL 0 0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 7:00
+#+COLUMNS: %40ITEM(Task) %17Effort(Estimated Effort){:} %CLOCKSUM
+#+STARTUP: overview
+#+PRIORITIES: A B C
+#+TODO: ANSWER(a) ARCHIVED(e@/!) DATE(d@/!) DOING(i@/!) DONE(o@/!) JIRA(j@/!) TODO(t@/!) WAITING(w@/!) 
+# Local Variables:
+# mode: org
+# org-todo-keyword-faces: (("ANSWER" . "orange") ("ARCHIVED" . "blue") ("DATE" . "red") ("DOING" . "yellow") ("DONE" . "green") ("HPSM" . "red") ("JIRA" . "red") ("TODO" . org-warning) ("WAITING" . "orange"))
+# End:
+
+#+END_EXAMPLE
+
+** В каких файлах нам искать TODO при загрузке, и запланированные(scheduled) вещи:
+#+BEGIN_SRC emacs-lisp 
+(setq org-agenda-files (list "~/org/work.org " "~/org/deal.org"  "~/org/home.org"))
+#+END_SRC
+
+** Как открыть расписание (agenda) на неделю:
+#+BEGIN_SRC emacs-lisp
+;; This is for org-mode agenda view activation
+ (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+ ;; This is for key bindings to invoke agenda mode (see line-2)
+ (global-set-key "\C-cl" 'org-store-link)
+ (global-set-key "\C-ca" 'org-agenda)
+ (global-set-key "\C-cc" 'org-capture)
+ (global-set-key "\C-cb" 'org-iswitchb)
+#+END_SRC
+
+** Настройка. Обязательный префикс в начале файла 
+
+Emacs does not actually understand you are editing an Org document,
+yet. To enable Org mode on your current document, 
+*type M-x org-mode* which will ~enable~ the Org mode on the current document.
+To make Emacs understand that this is an Org document, add the following to the top of your document:
+
+#+BEGIN_EXAMPLE
+ MY PROJECT -*- mode: org -*-
+#+END_EXAMPLE
+
+** Альтернативные пункты  TODO 
+#+BEGIN_SRC emacs-lisp
+(setq org-todo-keywords
+      '((sequence "TODO" "|" "DONE")
+        (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED")
+        (sequence "|" "CANCELED")))
+#+END_SRC
+** Выбор из нескольких альтернатив листа TODO
++ C-u C-u C-c C-t
++ C-Shift-RIGHT
++ C-Shift-LEFT
+
+* Создание, редактирование и навигация по заголовкам
+
++ M-shift-RET (org-insert-todo-heading) Создать новую задачу-заголовок.
++ M-RET - Вставить задачу-заголовок того же уровня, что и текущий. 
+
++ C-c C-x C-w (org-cut-subtree)   - kill (вырезать) подуровень. С
+  числовым аргументом *C-u C-c C-x C-w*  N убивает N подуровней.
++ C-c C-x M-w (org-copy-subtree)  - копировать подуровень. С числовым аргументом N копирует N подуровней.
++ C-c C-x C-y (org-paste-subtree) - вставить подуровень. Уровень вставляемого блока приводится в соответствие с тем местом в которое он копируется.
+
+* Глобальный TODO лист (Agenda Views)
++ вызовем _C-c a t_, что бы войти в agenda. 
+(Org-mode просканирует все org-agenda-files и представит список всех
+действующих TODO)
+
++ _C-c a a_ *Будет отображено расписание на эту неделю*:
++ C-c C-s откроется календарь,
++ C-c C-d для обозначения «крайних сроков» (DEADLINE)
+
+теперь можем *нажать l* (как Leonid), что бы включить вид «log». 
+
++ C-c c-q - сменить tags (таг, тэг)
++ C-c C-q (org-set-tags-command)  -  There is also a special command for inserting tags:
++ C-c C-c – add tag
+
+*M-TAB* offers completion on tags
+
++ _C-c c-t_ - сменить status
++ _C-c c-c_  -  обновить org-mode file. It updates the local config of the file.
+
+Expand a subtree by pressing *TAB*.  To expand the whole document.
+
++ C-c [	add/move current file to front of agenda
++ C-c ]	remove current file from your agenda
+
++ C-'	cycle through agenda file list
++ C-c C-x </>	set/remove restriction lock
++ _C-c a a_	compile agenda for the *current week*
++ _C-c a t_	compile *global TODO list*
++ C-c a T	compile TODO list for specific keyword
++ C-c a m	match tags, TODO kwds, properties
++ C-c a M	match only in TODO entries
++ C-c a #	find stuck projects
++ C-c a L	show timeline of current org file
++ C-c a C	configure custom commands
++ C-c C-o	agenda for date at cursor
+
+** Выйти из agend-а
++ q	quit agenda, remove agenda buffer
++ x exit agenda, remove all agenda buffers
+
+* Проставить комментарии к задаче
++ C-c С-z (org-add-note) - поставить комментарий к задаче 
++ C-с C-с (org-ctrl-c-ctrl-c)  - сохранить комментарий к задаче
+
+* Цикл рабочего процесса, состояние задач (cycle workflow)
++ С-с С-s (m-x org-schedule) -  schedule:  установить расписание 
++ С-с С-d (m-x org-deadline)-  deadline:  установить дедлайн
++ C-c C-t - изменить статус задачи в TODO листе
++ C-30 C-c C-w  - показать все дедлайны за 30 дней
++ C-u C-x C-x C-u - update  table. Обновить таблицу
++ S-left/right - cycle workflow
++ C-c / t - show TODOs in current document
+** Приоритеты задач (Priorities)
++ Shift-UP (org-priority-up)
++ Shift-DOWN (org-priority-dow
+** Расписание от даты до даты ( в интервале) Задания длинной более 1 дня
+
++ _C-c C-x C-t_ (org-toggle-time-stamp-overlays) редактировать время 
+
++ Так выглядят задачи *в интервале*: 
+#+BEGIN_EXAMPLE 
+<00-00>--<00-00>
+#+END_EXAMPLE
++ Так выглядят *периодические задачи* (8.3.2 Repeated tasks):  
+#+BEGIN_EXAMPLE
+<2099-99-99 tat +1d>
+#+END_EXAMPLE
+
+* Контролировать время задачи (Clocking time)
+** Таймер 
++ C-c c-x c-i (org-clock-in) - start clock on current item 8.4.2 THE CLOCK TABLE ACTIVE
++ C-c c-x c-o/x (org-clock-out/org-clock-in-last) - stop/cancel clock on current item 8.4.2 THE CLOCK TABLE PASSIVE
++ C-u C-c C-y - посчитать время интервала
++ C-c . просто проставить текущую дату
++ C-u c-c .  +1d 12:00 - в данном случае это переодический интервал  
++ C-c C-x C-d	display total subtree times
++ C-c C-c	remove displayed times
++ C-c C-x C-r	insert/update table with clock report
+
+** Пересчет часов по задачам (Calculate on the clock table)
+1. Добавить ~/.emacs 
+#+BEGIN_SRC emacs-lisp
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+#+END_SRC
+2. Вставить блок для пересчета
+#+BEGIN_EXAMPLE
+ #+BEGIN: clocktable :maxlevel 3 :scope agenda :block thisweek :step day
+ #+END:
+#+END_EXAMPLE
+3. Вызвать пересчет часов *M-x org-clock-report* - создадим репорт по всем задачам
+
+* Параметры показа блоков (Global and local cycling)
++ *C-u C-u C-u TAB (outline-show-all)* Показать все. expand all trees Emacs and org mode
++ *Shift-TAB* или *C-u TAB* (org-global-cycle) Чередование отображения всего буфера (Global cycling)
++ *Shift-TAB* или *C-u TAB* - последовательное нажатие этой кнопки приводит к отображению: "показать краткое описание"->"показать содержание"->"показать все"
+
++ _C-c C-k_ (outline-show-branches) Expose all the headings of the subtree, CONTENTS view for just one subtree.
++ _C-c C-x b_ (org-tree-to-indirect-buffer) Show the current subtree in an indirect buffer.Отобразить текущее дерево подразделов в новом буфере.
+
++ M \to , M \leftarrow, M \uparrow , M \downarrow - управление деревом   
+
+* Перемещение по пунктам (Motion)
++ C-c C-n (org-next-visible-heading) Следующий заголовок любого уровня.
++ C-c C-p (org-previous-visible-heading) Предыдущий заголовок любого уровня.
++ C-c C-f (org-forward-same-level) Следующий заголовок того же уровня.
++ C-c C-b (org-backward-same-level) Предыдущий заголовок того же уровня.
++ C-c C-u (outline-up-heading) Переместиться назад на заголовок более высокого уровня.
++ C-c C-j (org-goto) перейти в другое место буфера не изменяя текущего его отображения.  
+
+* Ссылки и includ-ы в org-mode  (Handling Links)
+Делаем ссылки из одного файла на другой (аналог href)
++ _С-с с-l_ (M-x org-insert-link) - создать ссылку  
++ _C-c c-o_ (M-x org-open-at-point) - открыть ссылку
+
+Выглядеть будет так:
+
+[[~/gtd-org-mode/Projects.org][Блок проектов]]
+
+Делаем INCLUDE для шапки, бесценная вещь (аналог include, import):
+#+INCLUDE: "C:\\org-mode\\header.org"
+
+* Оформление текса (Emphasis and Monospace)
+Выделение шрифтом текста в org-mode:
+
++ *bold*,
++ /italic/,
++ _underline_,
++ =verbatim=,
++ ~code~,
++ +strike-through+
+** Картинки
+
++ Вставить в заголовок
+#+STARTUP: inlineimages 
+
++ Вставить в ~/.emacs 
+#+BEGIN_SRC emacs-lisp 
+(setq org-startup-with-inline-images t)
+#+END_SRC
+
++ Вставить саму картинку в двойных квадратных скобках
+#+BEGIN_SRC  LaTeX
+[[myimage.png]]
+#+END_SRC
+
+_M-x org-display-inline-images_ показать картинки 
+
+* Архивирование записей (Moving a tree to an archive file). 
++ _C-c C-x C-s_	(*m-x org-archive-subtree*) move subtree to archive file
+
+* Импорт и Экспорт (Import & Export)
+** Импорт CSV файл
++ M-x org-table-export	export as tab-separated file
++ M-x org-table-import	import tab-separated file
+
+** Импорт Doc(ODT) файл
++ C-c C-e o O (org-export-to-odt)
+
+* Перезагрузить org-mode:
++ M-x org-reload – reload Org mode after an update
++ M-x org-version – show Org mode version
+
+* Режим разметки - 'ASCII' режим
+*M-x visible-mode* - редактировать ссылки (перейти в текстовой режим)
+
+* Cпециальные символы (12.4 Special Symbols)
+You can use *LaTeX-like syntax* to insert special symbols—named entities—like ‘\alpha’ to indicate the Greek letter, or ‘\to’ to indicate an arrow
+
++ C-c C-x \ (M-x org-toggle-pretty-entities)
+
+* Дополнительно 
+ + С-x r t (M-x string-rectangle)  - вставим префикс-колонку метки до
+   точки (например символ списка +) 
+   C-x r r [A] (copy-rectangle-to-register)- скопируем стобец
+   C-x r i [A] (insert-register)- вставим столбец
+ + M-x customize-variable RET exec-path RE добавить пути до программ
+** Automatically open your agenda whenever you start Emacs
+You can get Emacs to automatically open your agenda whenever you start
+it. Add the following lines to your *~/.emacs.d/init.el* file:
+#+BEGIN_SRC emacs-lisp 
+(org-agenda nil "a")
+#+END_SRC
+** Справочная функция 
+C-h k <C-x C-y C-k>  какая функция отвечает за данную комбинацию клавиш
+** Редактируем  ~/.emacs   
+перезагружаем ->  (M-x load-file) ~/.emacs
+
+* M-x org-info =Пробуем читать документацию=
+
++ https://orgmode.org/worg/orgcard.html
++ https://orgmode.org/manual/Languages.html#Languages
++ https://channikhabra.com/blog/managing-chaos-org-mode-as-a-todo-list/
++ https://orgmode.org/orgcard.txt
++ https://orgmode.org/tools.html
