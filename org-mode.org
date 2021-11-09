@@ -65,7 +65,7 @@ To make Emacs understand that this is an Org document, add the following to the 
  MY PROJECT -*- mode: org -*-
 #+END_EXAMPLE
 
-** Альтернативные пункты  TODO 
+** Альтернативные пункты TODO 
 #+BEGIN_SRC emacs-lisp
 (setq org-todo-keywords
       '((sequence "TODO" "|" "DONE")
@@ -147,7 +147,7 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 
 + _C-c C-x C-t_ (org-toggle-time-stamp-overlays) редактировать время 
 
-+ Так выглядят задачи *в интервале*: 
++ Так выглядят задачи *в интервале* дат и времени: 
 #+BEGIN_EXAMPLE 
 <00-00>--<00-00>
 #+END_EXAMPLE
@@ -178,7 +178,7 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
  #+BEGIN: clocktable :maxlevel 3 :scope agenda :block thisweek :step day
  #+END:
 #+END_EXAMPLE
-3. Вызвать пересчет часов *M-x org-clock-report* - создадим репорт по всем задачам
+3. Вызвать пересчет часов *M-x org-clock-report* - создадим отчет (report) по всем задачам
 
 * Параметры показа блоков (Global and local cycling)
 + *C-u C-u C-u TAB (outline-show-all)* Показать все. expand all trees Emacs and org mode
