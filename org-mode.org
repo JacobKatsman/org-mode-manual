@@ -108,14 +108,14 @@ To make Emacs understand that this is an Org document, add the following to the 
 действующих TODO)
 
 + _C-c a a_ *Будет отображено расписание на эту неделю*:
-+ C-c C-s откроется календарь,
-+ C-c C-d для обозначения «крайних сроков» (DEADLINE)
++ C-c C-s - откроется календарь,
++ C-c C-d - для обозначения «крайних сроков» (DEADLINE)
 
 теперь можем *нажать l* (как Leonid), что бы включить вид «log». 
 
 + C-c c-q - сменить tags (таг, тэг)
 + C-c C-q (M-x org-set-tags-command)  -  There is also a special command for inserting tags:
-+ C-c C-c – add tag
++ C-c C-c - add tag
 
 *M-TAB* offers completion on tags
 
@@ -127,17 +127,17 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 + C-c [	add/move current file to front of agenda
 + C-c ]	remove current file from your agenda
 
-+ C-'	cycle through agenda file list
-+ C-c C-x </>	set/remove restriction lock
-+ _C-c a a_	compile agenda for the *current week*
-+ _C-c a t_	compile *global TODO list*
-+ C-c a T	compile TODO list for specific keyword
-+ C-c a m	match tags, TODO kwds, properties
-+ C-c a M	match only in TODO entries
-+ C-c a #	find stuck projects
-+ C-c a L	show timeline of current org file
-+ C-c a C	configure custom commands
-+ C-c C-o	agenda for date at cursor
++ C-'	- cycle through agenda file list
++ C-c C-x </>	- set/remove restriction lock
++ _C-c a a_	- compile agenda for the *current week*
++ _C-c a t_	- compile *global TODO list*
++ C-c a T	- compile TODO list for specific keyword
++ C-c a m	- match tags, TODO kwds, properties
++ C-c a M	- match only in TODO entries
++ C-c a #	- find stuck projects
++ C-c a L	- show timeline of current org file
++ C-c a C	- configure custom commands
++ C-c C-o	- agenda for date at cursor
 
 ** Выйти из agend-а
 + q	quit agenda, remove agenda buffer
@@ -157,7 +157,7 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 + C-c / t - show TODOs in current document
 ** Приоритеты задач (Priorities)
 + Shift-UP (org-priority-up)
-+ Shift-DOWN (org-priority-dow
++ Shift-DOWN (org-priority-down)
 ** Расписание от даты до даты ( в интервале) Задания длинной более 1 дня
 
 + _C-c C-x C-t_ (org-toggle-time-stamp-overlays) редактировать время 
@@ -176,11 +176,11 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 + C-c c-x c-i (M-x org-clock-in) - start clock on current item (8.4.2 THE CLOCK TABLE ACTIVE)
 + C-c c-x c-o/x (M-x org-clock-out/org-clock-in-last) - stop/cancel clock on current iteОбязательный префикс в начале файлам (8.4.2 THE CLOCK TABLE PASSIVE)
 + C-u C-c C-y - посчитать время интервала
-+ C-c . просто проставить текущую дату
++ C-c . - просто проставить текущую дату
 + C-u c-c .  +1d 12:00 - в данном случае это периодический интервал  
-+ C-c C-x C-d	display total subtree times. Это значит что мы пересчитываем время в подзаголовках задач TODO листа.
-+ C-c C-c	remove displayed times
-+ C-c C-x C-r	insert/update table with clock report
++ C-c C-x C-d	- display total subtree times. Это значит что мы пересчитываем время в подзаголовках задач TODO листа.
++ C-c C-c	- remove displayed times
++ C-c C-x C-r	- insert/update table with clock report
 
 ** Пересчет часов по задачам (Calculate on the clock table)
 1. Добавить ~/.emacs 
@@ -196,8 +196,8 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 3. Вызвать пересчет часов *M-x org-clock-report* - создадим отчет (report) по всем задачам
 
 * Параметры показа блоков (Global and local cycling)
-+ *C-u C-u C-u TAB (M-x outline-show-all)* Показать все. expand all trees Emacs and org mode
-+ *Shift-TAB* или *C-u TAB* (org-global-cycle) Чередование отображения всего буфера (Global cycling)
++ *C-u C-u C-u TAB (M-x outline-show-all)* - Показать все. expand all trees Emacs and org mode
++ *Shift-TAB* или *C-u TAB* (org-global-cycle) - Чередование отображения всего буфера (Global cycling)
 + *Shift-TAB* или *C-u TAB* - последовательное нажатие этой кнопки приводит к отображению: "показать краткое описание"->"показать содержание"->"показать все"
 M-x
 + _C-c C-k_ (outline-show-branches) Expose all the headings of the subtree, CONTENTS view for just one subtree.
@@ -206,12 +206,12 @@ M-x
 + M \to , M \leftarrow, M \uparrow , M \downarrow - управление деревом   
 
 * Перемещение по пунктам (Motion)
-+ C-c C-n (M-x org-next-visible-heading) Следующий заголовок любого уровня.
-+ C-c C-p (M-x org-previous-visible-heading) Предыдущий заголовок любого уровня.
-+ C-c C-f (M-x org-forward-same-level) Следующий заголовок того же уровня.
-+ C-c C-b (M-x org-backward-same-level) Предыдущий заголовок того же уровня.
-+ C-c C-u (M-x outline-up-heading) Переместиться назад на заголовок более высокого уровня.
-+ C-c C-j (M-x org-goto) перейти в другое место буфера не изменяя текущего его отображения.  
++ C-c C-n (M-x org-next-visible-heading) - Следующий заголовок любого уровня.
++ C-c C-p (M-x org-previous-visible-heading) - Предыдущий заголовок любого уровня.
++ C-c C-f (M-x org-forward-same-level) - Следующий заголовок того же уровня.
++ C-c C-b (M-x org-backward-same-level) - Предыдущий заголовок того же уровня.
++ C-c C-u (M-x outline-up-heading) - Переместиться назад на заголовок более высокого уровня.
++ C-c C-j (M-x org-goto) - перейти в другое место буфера не изменяя текущего его отображения.  
 
 * Ссылки в org-mode  (Handling Links)
 Делаем ссылки из одного файла на другой (аналог href)
@@ -254,8 +254,8 @@ _M-x org-display-inline-images_ - показать картинки в текс�
 
 * Импорт и Экспорт (Import & Export)
 ** Импорт CSV файл
-+ M-x org-table-export	export as tab-separated file
-+ M-x org-table-import	import tab-separated file
++ (M-x org-table-export) -	export as tab-separated file
++ (M-x org-table-import) - 	import tab-separated file
 
 ** Импорт Doc(ODT) файл
 + C-c C-e o O (M-x org-export-to-odt)
