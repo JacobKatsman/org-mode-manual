@@ -232,10 +232,13 @@ M-x
 + =verbatim=,
 + ~code~,
 + +strike-through+
+
 ** Картинки
 
 + Вставить в заголовок
+#+BEGIN_SRC 
 #+STARTUP: inlineimages 
+#+END_SRC
 
 + Вставить в ~/.emacs 
 #+BEGIN_SRC emacs-lisp 
