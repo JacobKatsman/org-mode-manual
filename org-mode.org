@@ -8,7 +8,7 @@
 
 Hi people! Since 2 year ago, I have use org-mode. But in this long perid 
 I do not found the adequate, short manual for org-mode.
-The point is that Org-mode requires simultaneous setting .emacs file, setting org-mode file,
+The point is that Org-mode requires simultaneous setting .emacs file or "org-mode style.file", setting org-mode file,
 shortcat binding algorithm action at the same time. I try assembling
 this a short manual in this job in this paper. 
 I belive in usefull this work. Thank.
