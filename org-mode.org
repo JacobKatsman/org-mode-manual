@@ -261,10 +261,12 @@ You can use *LaTeX-like syntax* to insert special symbols—named entities—lik
 + C-c C-x \ (M-x org-toggle-pretty-entities)
 
 * Как в стилевой файл org-mode включить исполняемый код?
+#+BEGIN_SRC
 # -*- eval:(org-level-1 ((t (:inherit outline-1 :height 1.1)))) -*-
 # -*- eval:(org-level-2 ((t (:inherit outline-2 :height 1.1)))) -*-
 # -*- eval:(org-level-3 ((t (:inherit outline-3 :height 1.1)))) -*-
 # -*- eval:(org-level-4 ((t (:inherit outline-4 :height 1.1)))) -*-
+#+END_SRC
 
 * Дополнительно 
  + С-x r t (M-x string-rectangle)  - вставим префикс-колонку метки до
