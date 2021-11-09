@@ -174,11 +174,11 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 * Контролировать время задачи (Clocking time)
 ** Таймер 
 + C-c c-x c-i (M-x org-clock-in) - start clock on current item (8.4.2 THE CLOCK TABLE ACTIVE)
-+ C-c c-x c-o/x (M-x org-clock-out/org-clock-in-last) - stop/cancel clock on current iteОбязательный префикс в начале файлаm 8.4.2 THE CLOCK TABLE PASSIVE
++ C-c c-x c-o/x (M-x org-clock-out/org-clock-in-last) - stop/cancel clock on current iteОбязательный префикс в начале файлам (8.4.2 THE CLOCK TABLE PASSIVE)
 + C-u C-c C-y - посчитать время интервала
 + C-c . просто проставить текущую дату
-+ C-u c-c .  +1d 12:00 - в данном случае это переодический интервал  
-+ C-c C-x C-d	display total subtree times
++ C-u c-c .  +1d 12:00 - в данном случае это периодический интервал  
++ C-c C-x C-d	display total subtree times. Это значит что мы пересчитываем время в подзаголовках задач TODO листа.
 + C-c C-c	remove displayed times
 + C-c C-x C-r	insert/update table with clock report
 
@@ -249,7 +249,7 @@ M-x
 
 _M-x org-display-inline-images_ - показать картинки в тексте 
 
-* Архивирование записей (Moving a tree to an archive file). 
+* Архивирование записей, занесение из в отдельный файл и вырезание из текущего (Moving a tree to an archive file). 
 + _C-c C-x C-s_	(*M-x org-archive-subtree*) move subtree to archive file
 
 * Импорт и Экспорт (Import & Export)
