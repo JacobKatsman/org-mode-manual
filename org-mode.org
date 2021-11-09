@@ -72,6 +72,7 @@ To make Emacs understand that this is an Org document, add the following to the 
         (sequence "REPORT" "BUG" "KNOWNCAUSE" "|" "FIXED")
         (sequence "|" "CANCELED")))
 #+END_SRC
+
 ** Выбор из нескольких альтернатив листа TODO
 + C-u C-u C-c C-t
 + C-Shift-RIGHT
@@ -82,8 +83,7 @@ To make Emacs understand that this is an Org document, add the following to the 
 + M-shift-RET (M-x org-insert-todo-heading) Создать новую задачу-заголовок.
 + M-RET - Вставить задачу-заголовок того же уровня, что и текущий. 
 
-+ C-c C-x C-w (M-x org-cut-subtree)   - kill (вырезать) подуровень. С
-  числовым аргументом *C-u C-c C-x C-w*  N убивает N подуровней.
++ C-c C-x C-w (M-x org-cut-subtree)   - kill (вырезать) подуровень. С числовым аргументом *C-u C-c C-x C-w*  N убивает N подуровней.
 + C-c C-x M-w (M-x org-copy-subtree)  - копировать подуровень. С числовым аргументом N копирует N подуровней.
 + C-c C-x C-y (M-x org-paste-subtree) - вставить подуровень. Уровень вставляемого блока приводится в соответствие с тем местом в которое он копируется.
 
@@ -214,7 +214,7 @@ M-x
 #+END_SRC
 
 * Оформление текса (Emphasis and Monospace)
-Выделение шрифтом текста в org-mode:
+Выделить слово или текст написанием:
 
 + *bold*,
 + /italic/,
