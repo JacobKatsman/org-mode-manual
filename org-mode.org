@@ -1,4 +1,4 @@
-#+STARTUP: showall
+#+STARTUP: show1levels
 #+TITLE: "Org-mode short usefull hit-trick manual"
 #+AUTHOR: "J/Z/Katsman"
 #+EMAIL:  "call89269081096@gmail.com"
