@@ -13,8 +13,8 @@ shortcat binding algorithm action at the same time. I try assembling
 this a short manual in this job in this paper. 
 I belive in usefull this work. Thank.
 
-- Первое замечание: Emacs расчитан на скорость печати в английской раскладке более 50 WPM
-- Второе замечание: В Emacs невозможно, да и не нужно, работать без "доски"!
+- Первое замечание: Emacs org-mode расчитан на скорость печати в английской раскладке более 50 WPM
+- Второе замечание: В Emacs org-mode невозможно, да и не нужно, работать без "доски"!
 
 ** Это шапка нашего org-mode файла (её включаем SETUPFILE-ом):
 
