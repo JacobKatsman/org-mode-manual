@@ -61,7 +61,7 @@ Emacs does not actually understand you are editing an Org document. For enable O
 *type M-x org-mode* which will ~enable~ the Org mode on the current document.
 To make Emacs understand that this is an Org document, add the following to the top of your document:
 
-** запись в начале файла, файл исполняется как org-mode файл, автоматически
+** Запись в начале файла, файл исполняется как org-mode файл, автоматически
 #+BEGIN_SRC 
  # -*- mode: org -*-
 #+END_SRC
@@ -151,7 +151,7 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 + С-с С-s (m-x org-schedule) -  schedule:  установить расписание 
 + С-с С-d (m-x org-deadline)-  deadline:  установить дедлайн
 + C-c C-t - изменить статус задачи в TODO листе
-+ C-30 C-c C-w  - показать все дедлайны за 30 дней
++ C-30 C-c C-w  - показать все дедлайны за 30 днейОбязательный префикс в начале файла
 + C-u C-x C-x C-u - update  table. Обновить таблицу
 + S-left/right - cycle workflow
 + C-c / t - show TODOs in current document
@@ -174,7 +174,7 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 * Контролировать время задачи (Clocking time)
 ** Таймер 
 + C-c c-x c-i (M-x org-clock-in) - start clock on current item (8.4.2 THE CLOCK TABLE ACTIVE)
-+ C-c c-x c-o/x (M-x org-clock-out/org-clock-in-last) - stop/cancel clock on current item 8.4.2 THE CLOCK TABLE PASSIVE
++ C-c c-x c-o/x (M-x org-clock-out/org-clock-in-last) - stop/cancel clock on current iteОбязательный префикс в начале файлаm 8.4.2 THE CLOCK TABLE PASSIVE
 + C-u C-c C-y - посчитать время интервала
 + C-c . просто проставить текущую дату
 + C-u c-c .  +1d 12:00 - в данном случае это переодический интервал  
@@ -247,7 +247,7 @@ M-x
 [[myimage.png]]
 #+END_SRC
 
-_M-x org-display-inline-images_ показать картинки в тексте 
+_M-x org-display-inline-images_ - показать картинки в тексте 
 
 * Архивирование записей (Moving a tree to an archive file). 
 + _C-c C-x C-s_	(*M-x org-archive-subtree*) move subtree to archive file
