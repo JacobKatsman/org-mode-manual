@@ -1,5 +1,5 @@
 #+STARTUP: showall
-#+TITLE: "Org-mode short usefull manual"
+#+TITLE: "Org-mode short usefull hit-trick manual"
 #+AUTHOR: "J/Z/Katsman"
 #+EMAIL:  "call89269081096@gmail.com"
  
@@ -16,7 +16,7 @@ I belive in usefull this work. Thank.
 - Первое замечание: Emacs org-mode расчитан на скорость печати в английской раскладке более 50 WPM
 - Второе замечание: В Emacs org-mode невозможно, да и не нужно, работать без "доски"!
 
-** Это шапка нашего org-mode файла (её включаем SETUPFILE-ом):
+** Это шапка (стелевой файл) нашего org-mode файла (её включаем SETUPFILE-ом):
 
 #+BEGIN_EXAMPLE
 
