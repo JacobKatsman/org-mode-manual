@@ -158,7 +158,7 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 
 * Контролировать время задачи (Clocking time)
 ** Таймер 
-+ C-c c-x c-i (M-x org-clock-in) - start clock on current item 8.4.2 THE CLOCK TABLE ACTIVE
++ C-c c-x c-i (M-x org-clock-in) - start clock on current item (8.4.2 THE CLOCK TABLE ACTIVE)
 + C-c c-x c-o/x (M-x org-clock-out/org-clock-in-last) - stop/cancel clock on current item 8.4.2 THE CLOCK TABLE PASSIVE
 + C-u C-c C-y - посчитать время интервала
 + C-c . просто проставить текущую дату
