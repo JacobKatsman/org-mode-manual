@@ -237,7 +237,7 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 [[myimage.png]]
 #+END_SRC
 
-_M-x org-display-inline-images_ показать картинки 
+_M-x org-display-inline-images_ показать картинки в тексте 
 
 * Архивирование записей (Moving a tree to an archive file). 
 + _C-c C-x C-s_	(*m-x org-archive-subtree*) move subtree to archive file
@@ -283,7 +283,7 @@ it. Add the following lines to your *~/.emacs.d/init.el* file:
 (org-agenda nil "a")
 #+END_SRC
 ** Справочная функция 
-C-h k <C-x C-y C-k>  какая функция отвечает за данную комбинацию клавиш
+C-h k <C-x C-y C-k> определить  функцию отвечающую за комбинацию клавиш
 ** Редактируем  ~/.emacs   
 перезагружаем ->  (M-x load-file) ~/.emacs
 
