@@ -2,9 +2,9 @@
 #+TITLE: "Org-mode short usefull manual"
 #+AUTHOR: "J/Z/Katsman"
 #+EMAIL:  "call89269081096@gmail.com"
-#+INCLUDE: "C:\\org-mode\\header.org"
+ 
 
-* Предварительные настройки (Getting Started)
+* Предварительные настройки org-mode (Getting Started)
 
 Hi people! Since 2 year ago, I have use org-mode. But in this long perid 
 I do not found the adequate, short manual for org-mode.
@@ -16,7 +16,7 @@ I belive in usefull this work. Thank.
 - Первое замечание: Emacs расчитан на скорость печати в английской раскладке более 50 WPM
 - Второе замечание: В Emacs невозможно, да и не нужно, работать без "доски"!
 
-** Это шапка нашего org-mode файла (её включаем INCLUD-ом):
+** Это шапка нашего org-mode файла (её включаем SETUPFILE-ом):
 
 #+BEGIN_EXAMPLE
 
@@ -57,8 +57,7 @@ I belive in usefull this work. Thank.
 
 ** Настройка. Обязательный префикс в начале файла 
 
-Emacs does not actually understand you are editing an Org document,
-yet. To enable Org mode on your current document, 
+Emacs does not actually understand you are editing an Org document. For enable Org mode in your current document, 
 *type M-x org-mode* which will ~enable~ the Org mode on the current document.
 To make Emacs understand that this is an Org document, add the following to the top of your document:
 
@@ -199,7 +198,7 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 + C-c C-u (outline-up-heading) Переместиться назад на заголовок более высокого уровня.
 + C-c C-j (org-goto) перейти в другое место буфера не изменяя текущего его отображения.  
 
-* Ссылки и includ-ы в org-mode  (Handling Links)
+* Ссылки includ-ы в org-mode  (Handling Links)
 Делаем ссылки из одного файла на другой (аналог href)
 + _С-с с-l_ (M-x org-insert-link) - создать ссылку  
 + _C-c c-o_ (M-x org-open-at-point) - открыть ссылку
@@ -208,6 +207,7 @@ Expand a subtree by pressing *TAB*.  To expand the whole document.
 
 [[~/gtd-org-mode/Projects.org][Блок проектов]]
 
+* includ-ы в org-mode  (Style Links)
 Делаем INCLUDE для шапки, бесценная вещь (аналог include, import):
 #+SETUPFILE: /home/useralex/blogs/setup/setupfile.org
 
