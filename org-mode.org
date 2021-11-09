@@ -61,9 +61,9 @@ Emacs does not actually understand you are editing an Org document. For enable O
 *type M-x org-mode* which will ~enable~ the Org mode on the current document.
 To make Emacs understand that this is an Org document, add the following to the top of your document:
 
-#+BEGIN_EXAMPLE
- MY PROJECT -*- mode: org -*-
-#+END_EXAMPLE
+#+BEGIN_SRC 
+ # -*- mode: org -*-
+#+END_SRC
 
 ** Альтернативные пункты TODO 
 #+BEGIN_SRC emacs-lisp
