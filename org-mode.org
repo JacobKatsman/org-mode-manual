@@ -289,8 +289,9 @@ C-h k <C-x C-y C-k>  какая функция отвечает за данну�
 
 * M-x org-info =Пробуем читать документацию=
 
-+ https://orgmode.org/worg/orgcard.html
-+ https://orgmode.org/manual/Languages.html#Languages
-+ https://channikhabra.com/blog/managing-chaos-org-mode-as-a-todo-list/
-+ https://orgmode.org/orgcard.txt
-+ https://orgmode.org/tools.html
++ [[https://orgmode.org/worg/orgcard.html][Org-Mode Reference Card Table of Contents]] 
++ [[https://orgmode.org/manual/Languages.html#Languages][16.9 Languages]]
++ [[https://channikhabra.com/blog/managing-chaos-org-mode-as-a-todo-list/][Managing Chaos : Org mode as a TODO list]]
++ [[https://github.com/tkf/org-mode/blob/master/doc/orgcard.tex][orgcard.tex]]
++ [[https://orgmode.org/tools.html][Import & Export]]
++ [[https://orgmode.org/manual/In_002dbuffer-Settings.html][17.8 Summary of In-Buffer Settings]] 
