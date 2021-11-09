@@ -61,8 +61,23 @@ Emacs does not actually understand you are editing an Org document. For enable O
 *type M-x org-mode* which will ~enable~ the Org mode on the current document.
 To make Emacs understand that this is an Org document, add the following to the top of your document:
 
+** файл исполняется как org-mode  автоматически
 #+BEGIN_SRC 
  # -*- mode: org -*-
+#+END_SRC
+
+** includ-ы в org-mode  (Style Links)
+Делаем INCLUDE для шапки, бесценная вещь (аналог include, import):
+#+BEGIN_SRC
+#+SETUPFILE: /home/useralex/blogs/setup/setupfile.org
+#+END_SRC
+
+** Как в стилевой файл org-mode включить исполняемый код?
+#+BEGIN_SRC
+# -*- eval:(org-level-1 ((t (:inherit outline-1 :height 1.1)))) -*-
+# -*- eval:(org-level-2 ((t (:inherit outline-2 :height 1.1)))) -*-
+# -*- eval:(org-level-3 ((t (:inherit outline-3 :height 1.1)))) -*-
+# -*- eval:(org-level-4 ((t (:inherit outline-4 :height 1.1)))) -*-
 #+END_SRC
 
 ** Альтернативные пункты TODO 
@@ -198,7 +213,7 @@ M-x
 + C-c C-u (M-x outline-up-heading) Переместиться назад на заголовок более высокого уровня.
 + C-c C-j (M-x org-goto) перейти в другое место буфера не изменяя текущего его отображения.  
 
-* Ссылки includ-ы в org-mode  (Handling Links)
+* Ссылки в org-mode  (Handling Links)
 Делаем ссылки из одного файла на другой (аналог href)
 + _С-с с-l_ (M-x org-insert-link) - создать ссылку  
 + _C-c c-o_ (M-x org-open-at-point) - открыть ссылку
@@ -207,11 +222,6 @@ M-x
 
 [[~/gtd-org-mode/Projects.org][Блок проектов]]
 
-* includ-ы в org-mode  (Style Links)
-Делаем INCLUDE для шапки, бесценная вещь (аналог include, import):
-#+BEGIN_SRC
-#+SETUPFILE: /home/useralex/blogs/setup/setupfile.org
-#+END_SRC
 
 * Оформление текса (Emphasis and Monospace)
 Выделить слово или текст написанием:
@@ -262,13 +272,7 @@ You can use *LaTeX-like syntax* to insert special symbols—named entities—lik
 
 + C-c C-x \ (M-x org-toggle-pretty-entities)
 
-* Как в стилевой файл org-mode включить исполняемый код?
-#+BEGIN_SRC
-# -*- eval:(org-level-1 ((t (:inherit outline-1 :height 1.1)))) -*-
-# -*- eval:(org-level-2 ((t (:inherit outline-2 :height 1.1)))) -*-
-# -*- eval:(org-level-3 ((t (:inherit outline-3 :height 1.1)))) -*-
-# -*- eval:(org-level-4 ((t (:inherit outline-4 :height 1.1)))) -*-
-#+END_SRC
+
 
 * Дополнительно 
  + С-x r t (M-x string-rectangle)  - вставим префикс-колонку метки до
