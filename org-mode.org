@@ -286,7 +286,16 @@ it. Add the following lines to your *~/.emacs.d/init.el* file:
 C-h k <C-x C-y C-k> определить  функцию отвечающую за комбинацию клавиш
 ** Редактируем  ~/.emacs   
 перезагружаем ->  (M-x load-file) ~/.emacs
-
+** padding line text
+#+BEGIN_SRC
+(add-hook 'window-configuration-change-hook
+          (lambda ()
+            (set-window-margins (car (get-buffer-window-list (current-buffer) nil t)) 6 4)))
+#+END_SRC            
+** Solid line separator:
+#+BEGIN_SRC
+(setq linum-format "%4d \u2502 ")
+#+END_SRC
 * M-x org-info =Пробуем читать документацию=
 
 + [[https://orgmode.org/worg/orgcard.html][Org-Mode Reference Card Table of Contents]] 
