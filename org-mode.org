@@ -55,24 +55,24 @@ I belive in usefull this work. Thank.
  (global-set-key "\C-cb" 'org-iswitchb)
 #+END_SRC
 
-** Настройка. Обязательный префикс в начале файла 
+** Настройка.  
 
 Emacs does not actually understand you are editing an Org document. For enable Org mode in your current document, 
 *type M-x org-mode* which will ~enable~ the Org mode on the current document.
 To make Emacs understand that this is an Org document, add the following to the top of your document:
 
-** файл исполняется как org-mode файл, автоматически
+** запись в начале файла, файл исполняется как org-mode файл, автоматически
 #+BEGIN_SRC 
  # -*- mode: org -*-
 #+END_SRC
 
-** includ-ы в org-mode  (Style Links)
+** Включаем стилевой файл. includ-ы в org-mode  (Style Links)
 Делаем INCLUDE для шапки, бесценная вещь (аналог include, import):
 #+BEGIN_SRC
 #+SETUPFILE: /home/useralex/blogs/setup/setupfile.org
 #+END_SRC
 
-** Как в стилевой файл org-mode включить исполняемый код elisp?
+** Включаем в стилевой файл org-mode исполняемый код elisp?
 #+BEGIN_SRC
 # -*- eval:(org-level-1 ((t (:inherit outline-1 :height 1.1)))) -*-
 # -*- eval:(org-level-2 ((t (:inherit outline-2 :height 1.1)))) -*-
